@@ -4,7 +4,6 @@
     "node_modules/": "explorerExcludedFiles",
     "dist/": "explorerExcludedFiles",
     ".vscode/": "explorerExcludedFiles",
-    ".cache/": "explorerExcludedFiles",
-    ".env": "explorerExcludedFiles"
+    ".cache/": "explorerExcludedFiles"
   }
 }
