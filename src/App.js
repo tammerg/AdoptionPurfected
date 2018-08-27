@@ -4,7 +4,7 @@ import pf from "petfinder-client";
 import Pet from "./Pet";
 
 const petfinder = pf({
-  key: process.env.API_Key,
+  key: process.env.API_KEY,
   secret: process.env.API_SECRET
 });
 
@@ -46,7 +46,16 @@ class App extends React.Component {
             if (Array.isArray(pet.breeds.breed)) {
               breed = pet.breeds.breed.join(", ");
             }
-            return <Pet animal={pet.animal} name={pet.name} breed={breed} />;
+            return (
+              <Pet
+                key={pet.id}
+                animal={pet.animal}
+                name={pet.name}
+                breed={breed}
+                media={pet.media}
+                locatiom={`${pet.contact.city}, ${pet.contact.state}`}
+              />
+            );
           })}
         </div>
       </div>
