@@ -1,10 +1,18 @@
 import React from "react";
 import { render } from "react-dom";
+import pf from "petfinder-client";
 import Pet from "./Pet";
 
+const petfinder = pf({
+  key: process.env.API_Key,
+  secret: process.env.API_SECRET
+});
+
 class App extends React.Component {
-  handleTitleClick() {
-    alert("You clicked the title");
+  componentDidMount() {
+    const promise = petfinder.breed.list({ animal: "dog" });
+
+    promise.then(console.log, console.error);
   }
   render() {
     return (
