@@ -76,7 +76,6 @@ class Details extends React.Component {
               </div>
             </Modal>
           ) : null}
-          }
         </div>
       </div>
     );
